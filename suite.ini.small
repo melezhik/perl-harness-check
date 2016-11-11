@@ -1,0 +1,14 @@
+perl_version 5.20.1
+os minoca
+
+<minoca>
+  <perl_5_20_1>
+    <default_pass_list>
+      t/base/cond
+      t/base/if
+      t/base/lex
+      t/base/num
+      t/base/pat
+    </default_pass_list>
+  </perl_5_20_1>
+</minoca>
