@@ -1,6 +1,6 @@
 # SYNOPSIS
 
-Analyze perl test reports.
+Run tests against Perl test harness report
 
 # Perl versions supported
 
