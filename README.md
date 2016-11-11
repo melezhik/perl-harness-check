@@ -1,4 +1,4 @@
-# SYNOPSIS
+a# SYNOPSIS
 
 Run tests against Perl test harness report
 
@@ -26,6 +26,7 @@ Let me know if you want support another OS.
     $ cd /your/perl/source/distribution && make test 1>perl-test-report.txt &2>1 # run perl test harness
     $ cat perl-test-report.txt | sparrow plg run perl-harness-check # verify test report 
 
+![perl harness check screenshot](https://raw.githubusercontent.com/melezhik/perl-harness-check/master/perl-harness-check.png)
 
 # Configuration
 
@@ -55,7 +56,7 @@ Afterwards you fix some OS level bugs and believe that a related perl test issue
 
     $ cat perl-test-report.txt | sparrow plg run perl-harness-check --param should_pass=io/fs.t 
 
-    # two previos in one step:
+    # two previous in one step:
     $ cat perl-test-report.txt | sparrow plg run perl-harness-check --param should_pass=io/fs.t,ext/POSIX/t/time.t 
 
 
@@ -67,7 +68,7 @@ Ok if you really see that bugs are gone you may do one of two things:
 
 ## Custom should pass lists
 
-Alternatively you may set custom list of successfull tests:
+Alternatively you may set custom list of successful tests:
 
     $ sparrow project create minoca
 
