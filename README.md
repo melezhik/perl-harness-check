@@ -1,4 +1,4 @@
-a# SYNOPSIS
+# SYNOPSIS
 
 Run tests against Perl test harness report
 
