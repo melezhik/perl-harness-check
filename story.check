@@ -1,2 +1,6 @@
+code: <<CODE
+use Data::Dumper;
+note Dumper(config());
+CODE
 
 
