@@ -62,11 +62,11 @@ Afterwards you fix some OS level bugs and believe that a related perl test issue
 
 Ok if you really see that bugs are gone you may do one of two things:
 
-* create pull request to add succeeded test to `default pass list`.
+* create pull request to add succeeded tests to `default pass list`.
 
-* create custom pass list
+* create `custom pass list`
 
-## Custom should pass lists
+## Custom pass lists
 
 Alternatively you may set custom list of successful tests:
 
