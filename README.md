@@ -1,6 +1,10 @@
 # SYNOPSIS
 
-Run Perl tests and analyze results.
+Analyze perl test reports.
+
+# Perl versions supported
+
+* 5.20.1
 
 # INSTALL
 
