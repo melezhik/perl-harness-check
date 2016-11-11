@@ -40,13 +40,13 @@ Sets perl version. Obligatory. Default value is `5_20_1`
 
 # Workflow
 
-At the begining you've got some tests are passed and some are failed. It's ok. 
+At the beginning you've got some tests are passed and some are failed. It's ok. 
 Succeeded perl tests are listed in  *default pass list* at [plugin default configuration 
 file](https://github.com/melezhik/perl-harness-check/blob/master/suite.ini).
 
 
 
-Aftewards you fix some OS level bugs and belive that a related perl test issues should be gone, you can run:
+Afterwards you fix some OS level bugs and believe that a related perl test issues should be gone, you can run:
 
   
     $ cd /your/perl/source/distribution && make test 1>perl-test-report.txt &2>1
