@@ -1,6 +1,21 @@
 code: <<CODE
-use Data::Dumper;
-note Dumper(config());
+  note "os: ".(config()->{os});
+  note "perl version: ".(config()->{perl_version});
+  note "should pass: ".(config()->{should_pass});
 CODE
+
+generator: <<CODE
+
+my $pv = config()->{perl_version} || die "perl_version not set";
+(my $pv_key = $pv)=~s/\./_/g;
+
+my $os = config()->{os} || die "os not set";
+my $def_pass_list = config()->{$os}->{'perl_'.$pv_key}->{default_pass_list} || die "default pass list not set";
+    [ map { 
+      my $t = $_; s/\//\\\//g for $t; 
+      "within: $t\\s+" , 'regexp: \sok$'
+    } sort keys %{$def_pass_list} ]
+CODE
+
 
 

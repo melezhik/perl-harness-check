@@ -33,7 +33,7 @@ Let me know if you want support another OS.
 
 Sets OS name for target server. Obligatory. Default value is `minoca`. 
 
-## perl
+## perl_version
 
 Sets perl version. Obligatory. Default value is `5_20_1`
 
