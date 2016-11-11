@@ -41,7 +41,7 @@ Sets perl version. Obligatory. Default value is `5_20_1`
 # Workflow
 
 At the beginning you've got some tests are passed and some are failed. It's ok. 
-Succeeded perl tests are listed in  *default pass list* at [plugin default configuration 
+Succeeded perl tests are listed in  `default pass list` at [plugin default configuration 
 file](https://github.com/melezhik/perl-harness-check/blob/master/suite.ini).
 
 
@@ -55,8 +55,35 @@ Afterwards you fix some OS level bugs and believe that a related perl test issue
 
     $ cat perl-test-report.txt | sparrow plg run perl-harness-check --param should_pass=io/fs.t 
 
+    # two previos in one step:
+    $ cat perl-test-report.txt | sparrow plg run perl-harness-check --param should_pass=io/fs.t,ext/POSIX/t/time.t 
 
-Ok if you really see that bugs are gone create pull request to add succeeded test to default pass list.
+
+Ok if you really see that bugs are gone you may do one of two things:
+
+* create pull request to add succeeded test to `default pass list`.
+
+* create custom pass list
+
+## Custom should pass lists
+
+Alternatively you may set custom list of successfull tests:
+
+    $ sparrow project create minoca
+
+    $ sparrow task add minoca perl perl-harness-check 
+
+    $ sparrow task ini minoca/perl
+
+    <custom_pass_list>
+      io/fs.t
+      ext/POSIX/t/time.t
+    </custom_pass_list>
+
+Once list is ready run sparrow task:
+
+    $ cat perl-test-report.txt | sparrow task run minoca/perl
+
 
 # Author
 

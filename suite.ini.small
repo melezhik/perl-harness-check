@@ -1,7 +1,7 @@
 perl_version 5.20.1
-os minoca
+os minoca_test
 
-<minoca>
+<minoca_test>
   <perl_5_20_1>
     <default_pass_list>
       t/base/cond
@@ -11,4 +11,9 @@ os minoca
       t/base/pat
     </default_pass_list>
   </perl_5_20_1>
-</minoca>
+</minoca_test>
+
+<custom_pass_list>
+  t/base/rs 
+  t/base/term 
+</custom_pass_list>

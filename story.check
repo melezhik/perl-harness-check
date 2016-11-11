@@ -2,6 +2,7 @@ code: <<CODE
   note "os: ".(config()->{os});
   note "perl version: ".(config()->{perl_version});
   note "should pass: ".(config()->{should_pass});
+  note "custom pass list: ".( join ",", keys %{config()->{custom_pass_list} || {}});
 CODE
 
 generator: <<CODE
@@ -13,8 +14,12 @@ my $os = config()->{os} || die "os not set";
 my $def_pass_list = config()->{$os}->{'perl_'.$pv_key}->{default_pass_list} || die "default pass list not set";
     [ map { 
       my $t = $_; s/\//\\\//g for $t; 
-      "within: $t\\s+" , 'regexp: \sok$'
-    } sort keys %{$def_pass_list} ]
+      "within: ^$t\\s+\\.+\\s" , 'regexp: \sok$'
+    } sort ( 
+      (keys %{$def_pass_list}), 
+      ( split ',', config()->{should_pass} ),
+      ( keys %{config()->{custom_pass_list}||{}} ) 
+    )  ]
 CODE
 
 
